@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Referrals{% endblock title %}
+
+{% block content %}
+    <h3>Referrals:</h3>
+    <ul>
+        {% for referral in referrals %}
+            <li>{{ referral.user.username }}</li>
+            {% empty %}
+            <p>You don't have any referrals</p>
+        {% endfor %}
+    </ul>
+{% endblock content %}

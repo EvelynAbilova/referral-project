@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+      {% if request.user.is_authenticated %}
+          <a href="{% url 'logout' %}">Logout</a>
+          <a href="{% url 'referral-links' %}">Your referrals</a>
+          <h3>Hello, {{ user.username }}</h3>
+      {% else %}
+          <h3>You need to login in your profile</h3>
+          <a href="{% url 'login' %}">Login</a>
+  {% endif %}
+{% endblock content %}
